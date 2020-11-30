@@ -1,2 +1,5 @@
-# logtest
-testing limits of a single line on a container runtime
+### build
+
+```
+docker build -t schose/logtest:latest .
+```

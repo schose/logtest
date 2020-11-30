@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logtest
+  labels:
+      app: logtest
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+        app: logtest
+  template:
+    metadata:
+      labels:
+        app: logtest
+    spec:
+      containers:
+      - image: schose/logtest:latest
+        name: logtest
+        env:
+          - name: LOOPS
+            value: "1000"
+#      restartPolicy: Always
